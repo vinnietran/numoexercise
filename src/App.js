@@ -4,6 +4,7 @@ import "./components/layout/NewActivity";
 import NewActivity from "./components/layout/NewActivity";
 import DisplayActivity from "./components/layout/DisplayActivity";
 import Instructions from "./components/layout/Instructions";
+import CustomSearch from "./components/layout/CustomSearch";
 
 class App extends Component {
   render() {
@@ -38,6 +39,13 @@ class App extends Component {
           <div className="row">
             <div className="col-md-12">
               <NewActivity />
+            </div>
+          </div>
+          <br />
+          <br />
+          <div className="row">
+            <div className="col-md-12">
+              <CustomSearch />
             </div>
           </div>
         </div>
