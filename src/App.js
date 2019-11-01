@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import "./components/layout/NewActivity";
+import NewActivity from "./components/layout/NewActivity";
+import DisplayActivity from "./components/layout/DisplayActivity";
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello World
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Hello</h1>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <DisplayActivity />
+            </div>
+          </div>
+          <br></br>
+          <br></br>
+          <br></br>
+          <NewActivity />
+        </div>
+      </div>
+    );
+  }
+  componentDidMount() {
+    axios.get('http://www.boredapi.com/api/activity/')
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
 }
+
+
 
 export default App;
